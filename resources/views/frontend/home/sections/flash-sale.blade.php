@@ -13,13 +13,14 @@
         </div>
         <div class="row flash_sell_slider">
 
-            {{-- @php
-                $products = \App\Models\Product::withAvg('reviews', 'rating')->withCount('reviews')
-                    ->with(['variants', 'category', 'productImageGalleries'])->whereIn('id', $flashSaleItems)->get();
+            @php
+                // $products = \App\Models\Product::withAvg('reviews', 'rating')->withCount('reviews')
+                //     ->with(['variants', 'category', 'productImageGalleries'])->whereIn('id', $flashSaleItems)->get();
+                $products = \App\Models\Product::with(['variants', 'category', 'productImageGalleries'])->whereIn('id', $flashSaleItems)->get();
             @endphp
             @foreach ($products as $product)
                 <x-product-card :product="$product" />
-            @endforeach --}}
+            @endforeach
 
         </div>
     </div>
