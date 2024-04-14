@@ -80,8 +80,8 @@
                             href="{{ route('admin.shipping-rule.index') }}">Shipping Rule</a></li>
                     <li class="{{ setActive(['admin.vendor-profile.*']) }}"><a class="nav-link"
                             href="{{ route('admin.vendor-profile.index') }}">Vendor Profile</a></li>
-                     {{-- <li class="{{ setActive(['admin.payment-settings.*']) }}"><a class="nav-link"
-                            href="{{ route('admin.payment-settings.index') }}">Payment Settings</a></li> --}}
+                     <li class="{{ setActive(['admin.payment-settings.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.payment-settings.index') }}">Payment Settings</a></li>
 
                 </ul>
             </li>

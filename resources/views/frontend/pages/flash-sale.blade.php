@@ -51,14 +51,14 @@
                 </div>
 
                 <div class="row">
-                    {{-- @php
+                    @php
                         $products = \App\Models\Product::withAvg('reviews', 'rating')->withCount('reviews')
                     ->with(['variants', 'category', 'productImageGalleries'])
                         ->whereIn('id', $flashSaleItems)->get();
                     @endphp
                     @foreach ($products as $product)
                         <x-product-card :product="$product" />
-                    @endforeach --}}
+                    @endforeach
                 </div>
                 {{-- <div class="mt-5">
                     @if ($flashSaleItems->hasPages())

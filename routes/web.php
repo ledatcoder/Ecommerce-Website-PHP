@@ -137,24 +137,24 @@ Route::group(['middleware' =>['auth', 'verified'], 'prefix' => 'user', 'as' => '
     // Route::post('blog-comment', [BlogController::class, 'comment'])->name('blog-comment');
 
     // /** Checkout routes */
-    // Route::get('checkout', [CheckOutController::class, 'index'])->name('checkout');
-    // Route::post('checkout/address-create', [CheckOutController::class, 'createAddress'])->name('checkout.address.create');
-    // Route::post('checkout/form-submit', [CheckOutController::class, 'checkOutFormSubmit'])->name('checkout.form-submit');
+    Route::get('checkout', [CheckOutController::class, 'index'])->name('checkout');
+    Route::post('checkout/address-create', [CheckOutController::class, 'createAddress'])->name('checkout.address.create');
+    Route::post('checkout/form-submit', [CheckOutController::class, 'checkOutFormSubmit'])->name('checkout.form-submit');
 
     // /** Payment Routes */
-    // Route::get('payment', [PaymentController::class, 'index'])->name('payment');
-    // Route::get('payment-success', [PaymentController::class, 'paymentSuccess'])->name('payment.success');
+    Route::get('payment', [PaymentController::class, 'index'])->name('payment');
+    Route::get('payment-success', [PaymentController::class, 'paymentSuccess'])->name('payment.success');
 
     // /** Paypal routes */
-    // Route::get('paypal/payment', [PaymentController::class, 'payWithPaypal'])->name('paypal.payment');
-    // Route::get('paypal/success', [PaymentController::class, 'paypalSuccess'])->name('paypal.success');
-    // Route::get('paypal/cancel', [PaymentController::class, 'paypalCancel'])->name('paypal.cancel');
+    Route::get('paypal/payment', [PaymentController::class, 'payWithPaypal'])->name('paypal.payment');
+    Route::get('paypal/success', [PaymentController::class, 'paypalSuccess'])->name('paypal.success');
+    Route::get('paypal/cancel', [PaymentController::class, 'paypalCancel'])->name('paypal.cancel');
 
     // /** Stripe routes */
-    // Route::post('stripe/payment', [PaymentController::class, 'payWithStripe'])->name('stripe.payment');
+    Route::post('stripe/payment', [PaymentController::class, 'payWithStripe'])->name('stripe.payment');
 
     // /** Razorpay routes */
-    // Route::post('razorpay/payment', [PaymentController::class, 'payWithRazorPay'])->name('razorpay.payment');
+    Route::post('razorpay/payment', [PaymentController::class, 'payWithRazorPay'])->name('razorpay.payment');
 
     // /** COD routes */
     // Route::get('cod/payment', [PaymentController::class, 'payWithCod'])->name('cod.payment');
