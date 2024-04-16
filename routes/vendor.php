@@ -54,3 +54,7 @@ Route::put('products-variant-item-update/{variantItemId}', [VendorProductVariant
 Route::delete('products-variant-item/{variantItemId}', [VendorProductVariantItemController::class, 'destroy'])->name('products-variant-item.destroy');
 
 Route::put('products-variant-item-status', [VendorProductVariantItemController::class, 'chageStatus'])->name('products-variant-item.chages-status');
+/** Orders route */
+Route::get('orders', [VendorOrderController::class, 'index'])->name('orders.index');
+Route::get('orders/show/{id}', [VendorOrderController::class, 'show'])->name('orders.show');
+Route::get('orders/status/{id}', [VendorOrderController::class, 'orderStatus'])->name('orders.status');

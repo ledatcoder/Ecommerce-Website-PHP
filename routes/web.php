@@ -117,8 +117,8 @@ Route::group(['middleware' =>['auth', 'verified'], 'prefix' => 'user', 'as' => '
     // /** User Address Route */
     Route::resource('address', UserAddressController::class);
     // /** Order Routes */
-    // Route::get('orders', [UserOrderController::class, 'index'])->name('orders.index');
-    // Route::get('orders/show/{id}', [UserOrderController::class, 'show'])->name('orders.show');
+    Route::get('orders', [UserOrderController::class, 'index'])->name('orders.index');
+    Route::get('orders/show/{id}', [UserOrderController::class, 'show'])->name('orders.show');
 
     // /** Wishlist routes */
     // Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
