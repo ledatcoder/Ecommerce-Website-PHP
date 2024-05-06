@@ -54,17 +54,17 @@
                     @php
                         $products = \App\Models\Product::withAvg('reviews', 'rating')->withCount('reviews')
                     ->with(['variants', 'category', 'productImageGalleries'])
-                        ->whereIn('id', $flashSaleItems)->get();
+                        ->whereIn('id', $flashSaleItems)->getQuery();
                     @endphp
                     @foreach ($products as $product)
                         <x-product-card :product="$product" />
                     @endforeach
                 </div>
-                {{-- <div class="mt-5">
+                <div class="mt-5">
                     @if ($flashSaleItems->hasPages())
                         {{$flashSaleItems->links()}}
                     @endif
-                </div> --}}
+                </div>
             </div>
         </div>
     </section>

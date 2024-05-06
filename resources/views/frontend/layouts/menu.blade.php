@@ -21,7 +21,7 @@
                         <i class="far fa-bars"></i>
                     </div>
                     <ul class="wsus_menu_cat_item show_home toggle_menu">
-                        {{-- <li><a href="#"><i class="fas fa-star"></i> hot promotions</a></li> --}}
+                        <li><a href="#"><i class="fas fa-star"></i> hot promotions</a></li>
 
                         @foreach ($categories as $category)
                             <li><a class="{{ count($category->subCategories) > 0 ? 'wsus__droap_arrow' : '' }}"

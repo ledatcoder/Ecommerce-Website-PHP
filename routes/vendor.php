@@ -58,3 +58,11 @@ Route::put('products-variant-item-status', [VendorProductVariantItemController::
 Route::get('orders', [VendorOrderController::class, 'index'])->name('orders.index');
 Route::get('orders/show/{id}', [VendorOrderController::class, 'show'])->name('orders.show');
 Route::get('orders/status/{id}', [VendorOrderController::class, 'orderStatus'])->name('orders.status');
+
+/** Reviews route */
+Route::get('reviews', [VendorProductReviewController::class, 'index'])->name('reviews.index');
+
+/** Withdraw route */
+// Route::get('withdraw-request/{id}', [VendorWithdrawController::class, 'showRequest'])->name('withdraw-request.show');
+
+// Route::resource('withdraw', VendorWithdrawController::class);
