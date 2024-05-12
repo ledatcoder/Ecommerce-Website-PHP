@@ -26,7 +26,7 @@
                         <div class="col-md-12">
                             <div class="col-md-2">
                                 <div class="wsus__dash_pro_img">
-                                  <img src="{{Auth::user()->image ? asset(Auth::user()->image) : asset('frontend/images/hiha.png')}}" alt="img" class="img-fluid w-100">
+                                  <img src="{{Auth::user()->image ? asset(Auth::user()->image) : asset('frontend/images/ts-2.jpg')}}" alt="img" class="img-fluid w-100">
                                   <input type="file" name="image">
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
 
                         </div>
                         <div class="col-xl-12">
-                            <button class="common_btn mb-4 mt-2" type="submit">Cập Nhật</button>
+                            <button class="common_btn mb-4 mt-2" type="submit">upload</button>
                         </div>
                     </form>
 
@@ -75,7 +75,7 @@
                             </div>
                             </div>
                             <div class="col-xl-12">
-                            <button class="common_btn" type="submit">Cập Nhật</button>
+                            <button class="common_btn" type="submit">upload</button>
                             </div>
                         </div>
                     </form>

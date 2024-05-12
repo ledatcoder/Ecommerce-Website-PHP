@@ -14,7 +14,7 @@
         "razorpay/razorpay": "2.*",
         "srmklive/paypal": "~3.0",
         "stripe/stripe-php": "^14.1",
-        "yajra/laravel-datatables": "^10.1",
+        "yajra/laravel-datatables": "10.0",
         "yoeunes/toastr": "^2.3"
     },
     "require-dev": {

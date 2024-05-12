@@ -53,7 +53,7 @@ class HomeController extends Controller
         $homepage_secion_banner_four = Adverisement::where('key', 'homepage_secion_banner_four')->first();
         $homepage_secion_banner_four = json_decode($homepage_secion_banner_four?->value);
 
-        // $recentBlogs = Blog::with(['category', 'user'])->where('status',1)->orderBy('id', 'DESC')->take(8)->get();
+        $recentBlogs = Blog::with(['category', 'user'])->where('status',1)->orderBy('id', 'DESC')->take(8)->get();
 
         return view('frontend.home.home',
             compact(
@@ -71,14 +71,14 @@ class HomeController extends Controller
                 'homepage_secion_banner_two',
                 'homepage_secion_banner_three',
                 'homepage_secion_banner_four',
-                // 'recentBlogs'
+                'recentBlogs'
 
             ));
     }
 
     public function getTypeBaseProduct()
     {
-        $typeBaseProducts = [];
+        // $typeBaseProducts = [];
 
         // $typeBaseProducts['new_arrival'] = Product::withAvg('reviews', 'rating')->withCount('reviews')
         // ->with(['variants', 'category', 'productImageGalleries'])
@@ -96,7 +96,7 @@ class HomeController extends Controller
         // ->with(['variants', 'category', 'productImageGalleries'])
         // ->where(['product_type' => 'best_product', 'is_approved' => 1, 'status' => 1])->orderBy('id', 'DESC')->take(8)->get();
 
-        return $typeBaseProducts;
+        // return $typeBaseProducts;
     }
 
     public function vendorPage()

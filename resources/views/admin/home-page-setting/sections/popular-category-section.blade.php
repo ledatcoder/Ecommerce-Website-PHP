@@ -1,5 +1,5 @@
 @php
-    $popularCategorySection = json_decode($popularCategorySection->value ?? 'None');
+    $popularCategorySection = json_decode($popularCategorySection->value);
 
 @endphp
 
@@ -17,7 +17,7 @@
                             <select name="cat_one" class="form-control main-category">
                                 <option value="">Select</option>
                                 @foreach ($categories as $category)
-                                    <option {{$category->id ?? 'None' == $popularCategorySection[0]->category ? 'selected' : ''}} value="{{ $category->id }}">{{ $category->name }}</option>
+                                    <option {{$category->id == $popularCategorySection[0]->category ? 'selected' : ''}} value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -25,7 +25,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             @php
-                             $subCategories = \App\Models\SubCategory::where('category_id', $popularCategorySection[0]->category ?? 'None')->get();
+                             $subCategories = \App\Models\SubCategory::where('category_id', $popularCategorySection[0]->category)->get();
                             @endphp
                             <label>Sub Category</label>
                             <select name="sub_cat_one" id="" class="form-control sub-category">
@@ -39,7 +39,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             @php
-                            $childCategories = \App\Models\ChildCategory::where('sub_category_id', $popularCategorySection[0]->sub_category ?? 'None')->get();
+                            $childCategories = \App\Models\ChildCategory::where('sub_category_id', $popularCategorySection[0]->sub_category)->get();
                             @endphp
                             <label>Child Category</label>
                             <select name="child_cat_one" id="" class="form-control child-category">
@@ -62,7 +62,7 @@
                             <select name="cat_two" id="" class="form-control main-category">
                                 <option value="">Select</option>
                                 @foreach ($categories as $category)
-                                    <option {{$category->id ?? 'None' == $popularCategorySection[1]->category ? 'selected' : ''}} value="{{ $category->id ?? 'None' }}">{{ $category->name ?? 'None' }}</option>
+                                    <option {{$category->id == $popularCategorySection[1]->category ? 'selected' : ''}} value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -70,7 +70,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             @php
-                            $subCategories = \App\Models\SubCategory::where('category_id', $popularCategorySection[1]->category ?? 'None')->get();
+                            $subCategories = \App\Models\SubCategory::where('category_id', $popularCategorySection[1]->category)->get();
                            @endphp
                             <label>Sub Category</label>
                             <select name="sub_cat_two" id="" class="form-control sub-category">
@@ -84,7 +84,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             @php
-                            $childCategories = \App\Models\ChildCategory::where('sub_category_id', $popularCategorySection[1]->sub_category ?? 'None')->get();
+                            $childCategories = \App\Models\ChildCategory::where('sub_category_id', $popularCategorySection[1]->sub_category)->get();
                             @endphp
                             <label>Child Category</label>
                             <select name="child_cat_two" id="" class="form-control child-category">
@@ -106,7 +106,7 @@
                             <select name="cat_three" id="" class="form-control main-category">
                                 <option value="">Select</option>
                                 @foreach ($categories as $category)
-                                    <option {{$category->id ?? 'None'== $popularCategorySection[2]->category ? 'selected' : ''}} value="{{ $category->id ?? 'None' }}">{{ $category->name ?? 'None' }}</option>
+                                    <option {{$category->id == $popularCategorySection[2]->category ? 'selected' : ''}} value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -114,7 +114,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             @php
-                            $subCategories = \App\Models\SubCategory::where('category_id', $popularCategorySection[2]->category ?? 'None')->get();
+                            $subCategories = \App\Models\SubCategory::where('category_id', $popularCategorySection[2]->category)->get();
                            @endphp
                             <label>Sub Category</label>
                             <select name="sub_cat_three" id="" class="form-control sub-category">
@@ -128,7 +128,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             @php
-                            $childCategories = \App\Models\ChildCategory::where('sub_category_id', $popularCategorySection[2]->sub_category ?? 'None')->get();
+                            $childCategories = \App\Models\ChildCategory::where('sub_category_id', $popularCategorySection[2]->sub_category)->get();
                             @endphp
                             <label>Child Category</label>
                             <select name="child_cat_three" id="" class="form-control child-category">
@@ -149,7 +149,7 @@
                             <select name="cat_four" id="" class="form-control main-category">
                                 <option value="">Select</option>
                                 @foreach ($categories as $category)
-                                    <option {{$category->id ?? 'None'== $popularCategorySection[3]->category ? 'selected' : ''}} value="{{ $category->id  }}">{{ $category->name }}</option>
+                                    <option {{$category->id == $popularCategorySection[3]->category ? 'selected' : ''}} value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -157,7 +157,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             @php
-                            $subCategories = \App\Models\SubCategory::where('category_id', $popularCategorySection[3]->category ?? 'None')->get();
+                            $subCategories = \App\Models\SubCategory::where('category_id', $popularCategorySection[3]->category)->get();
                            @endphp
                             <label>Sub Category</label>
                             <select name="sub_cat_four" id="" class="form-control sub-category">
@@ -171,7 +171,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             @php
-                            $childCategories = \App\Models\ChildCategory::where('sub_category_id', $popularCategorySection[3]->sub_category ?? 'None')->get();
+                            $childCategories = \App\Models\ChildCategory::where('sub_category_id', $popularCategorySection[3]->sub_category)->get();
                             @endphp
                             <label>Child Category</label>
                             <select name="child_cat_four" id="" class="form-control child-category">

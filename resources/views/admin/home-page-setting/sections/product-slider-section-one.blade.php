@@ -1,5 +1,5 @@
 @php
-    $sliderSectionOne = json_decode($sliderSectionOne->value ?? 'None');
+    $sliderSectionOne = json_decode($sliderSectionOne->value);
 
 @endphp
 <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
@@ -16,7 +16,7 @@
                             <select name="cat_one" class="form-control main-category">
                                 <option value="">Select</option>
                                 @foreach ($categories as $category)
-                                    <option {{$category->id ?? 'None' == $sliderSectionOne->category ? 'selected' : ''}} value="{{$category->id}}">{{$category->name}}</option>
+                                    <option {{$category->id == $sliderSectionOne->category ? 'selected' : ''}} value="{{$category->id}}">{{$category->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -24,7 +24,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             @php
-                             $subCategories = \App\Models\SubCategory::where('category_id', $sliderSectionOne->category ?? 'None')->get();
+                             $subCategories = \App\Models\SubCategory::where('category_id', $sliderSectionOne->category)->get();
                             @endphp
 
                             <label>Sub Category</label>
@@ -40,7 +40,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             @php
-                            $childCategories = \App\Models\ChildCategory::where('sub_category_id', $sliderSectionOne->sub_category ?? 'None')->get();
+                            $childCategories = \App\Models\ChildCategory::where('sub_category_id', $sliderSectionOne->sub_category)->get();
                             @endphp
                             <label>Child Category</label>
                             <select name="child_cat_one" id="" class="form-control child-category">

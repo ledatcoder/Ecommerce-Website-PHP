@@ -16,11 +16,11 @@
                 </div>
             </div>
             <div class="row grid2">
-                @foreach ($typeBaseProducts as $key => $products)
+                {{-- @foreach ($typeBaseProducts as $key => $products)
                     @foreach ($products as $product)
                         <x-product-card :product="$product" :key="$key" />
                     @endforeach
-                @endforeach
+                @endforeach --}}
 
             </div>
         </div>

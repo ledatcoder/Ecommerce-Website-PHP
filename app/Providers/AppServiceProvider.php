@@ -29,20 +29,20 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
 
         $generalSetting = GeneralSetting::first();
-        // $logoSetting = LogoSetting::first();
-        // $mailSetting = EmailConfiguration::first();
+        $logoSetting = LogoSetting::first();
+        $mailSetting = EmailConfiguration::first();
         // $pusherSetting = PusherSetting::first();
-        // /** set time zone */
+        /** set time zone */
         Config::set('app.timezone', $generalSetting->time_zone);
 
-        // /** Set Mail Config */
-        // Config::set('mail.mailers.smtp.host', $mailSetting->host);
-        // Config::set('mail.mailers.smtp.port', $mailSetting->port);
-        // Config::set('mail.mailers.smtp.encryption', $mailSetting->encryption);
-        // Config::set('mail.mailers.smtp.username', $mailSetting->username);
-        // Config::set('mail.mailers.smtp.password', $mailSetting->password);
+        /** Set Mail Config */
+        Config::set('mail.mailers.smtp.host', $mailSetting->host);
+        Config::set('mail.mailers.smtp.port', $mailSetting->port);
+        Config::set('mail.mailers.smtp.encryption', $mailSetting->encryption);
+        Config::set('mail.mailers.smtp.username', $mailSetting->username);
+        Config::set('mail.mailers.smtp.password', $mailSetting->password);
 
-        // /** Set Broadcasting Config */
+        /** Set Broadcasting Config */
         // Config::set('broadcasting.connections.pusher.key', $pusherSetting->pusher_key);
         // Config::set('broadcasting.connections.pusher.secret', $pusherSetting->pusher_secret);
         // Config::set('broadcasting.connections.pusher.app_id', $pusherSetting->pusher_app_id);
@@ -51,8 +51,8 @@ class AppServiceProvider extends ServiceProvider
 
 
         /** Share variable at all view */
-        View::composer('*', function($view) use ($generalSetting){
-            $view->with(['settings' => $generalSetting]);
+        View::composer('*', function($view) use ($generalSetting, $logoSetting){
+            $view->with(['settings' => $generalSetting, 'logoSetting' => $logoSetting]);
         });
     }
 }

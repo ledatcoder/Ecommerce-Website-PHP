@@ -46,17 +46,16 @@
                                 ->with(['variants', 'category', 'productImageGalleries'])
                                 ->where('sub_category_id', $category->id)->orderBy('id', 'DESC')->take(12)->get();
 
-                            }
-                            // else {
-                            //     $category = \App\Models\ChildCategory::find($lastKey['child_category']);
-                            //     $products[] = \App\Models\Product::withAvg('reviews', 'rating')
-                            //     ->with(['variants', 'category', 'productImageGalleries'])
-                            //     ->where('child_category_id', $category->id)->orderBy('id', 'DESC')->take(12)->get();
+                            }else {
+                                $category = \App\Models\ChildCategory::find($lastKey['child_category']);
+                                $products[] = \App\Models\Product::withAvg('reviews', 'rating')
+                                ->with(['variants', 'category', 'productImageGalleries'])
+                                ->where('child_category_id', $category->id)->orderBy('id', 'DESC')->take(12)->get();
 
-                            // }
+                            }
 
                         @endphp
-                        {{-- <button class="{{ $loop->index === 0 ? 'auto_click active' : ''}}" data-filter=".category-{{$loop->index}}">{{$category->name}}</button> --}}
+                        <button class="{{ $loop->index === 0 ? 'auto_click active' : ''}}" data-filter=".category-{{$loop->index}}">{{$category->name}}</button>
                         @endforeach
                     </div>
                 </div>

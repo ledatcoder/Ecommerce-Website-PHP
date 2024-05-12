@@ -265,9 +265,9 @@ class PaymentController extends Controller
     {
         $codPaySetting = CodSetting::first();
         $setting = GeneralSetting::first();
-        if($codPaySetting->status == 0){
-            return redirect()->back();
-        }
+        // if($codPaySetting->status == 0){
+        //     return redirect()->back();
+        // }
 
         // amount calculation
        $total = getFinalPayableAmount();

@@ -26,10 +26,10 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{asset('backend/assets/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('backend/assets/css/components.css')}}">
-{{--
+
   @if($settings->layout === 'RTL')
   <link rel="stylesheet" href="{{asset('backend/assets/css/rtl.css')}}">
-  @endif --}}
+  @endif
 
   {{-- <script>
     const USER = {
